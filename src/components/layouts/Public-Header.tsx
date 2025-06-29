@@ -16,8 +16,8 @@ export default function PublicHeader() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink className="font-bold text-xl">
-                  <Link href="/">Blog</Link>
+                <NavigationMenuLink className="font-bold text-xl" href="/">
+                  Blog
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
