@@ -26,6 +26,14 @@ export default function CreatePage() {
     setContentLength(value.length);
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files?.[0];
+    if (!(selectedFile instanceof File)) {
+      alert("画像ファイルを選択してください");
+      e.target.value = "";
+    }
+  };
+
   return (
     <div className="container mx-auto mt-10">
       <h1 className="text-2xl font-bold mb-4">新規記事投稿(Markdown対応)</h1>
@@ -46,7 +54,13 @@ export default function CreatePage() {
         </div>
         <div>
           <Label htmlFor="topImage">トップ画像</Label>
-          <Input type="file" id="topImage" accept="image/*" name="topImage" />
+          <Input
+            type="file"
+            id="topImage"
+            accept="image/*"
+            name="topImage"
+            onChange={handleFileChange}
+          />
           {state.errors.topImage && (
             <p className="text-red-500 text-sm mt-1">
               {state.errors.topImage.join(",")}
