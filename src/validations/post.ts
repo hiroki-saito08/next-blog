@@ -8,12 +8,5 @@ export const postSchema = z.object({
   content: z
     .string()
     .min(10, { message: "内容は10文字以上で入力してください" }),
-  topImage: z
-    .instanceof(Blob)
-    .refine(
-      (file) => file.size > 0 && file.type.startsWith("image/"),
-      "有効な画像ファイルを選択してください"
-    )
-    .nullable()
-    .optional(),
+  topImage: z.instanceof(Blob).nullable().optional(),
 });
