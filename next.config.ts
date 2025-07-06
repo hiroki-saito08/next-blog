@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "picsum.photos",
       },
+      {
+        protocol: "https",
+        hostname: "trsohkknsxqqkqfhroyk.supabase.co",
+      },
     ],
   },
   experimental: {
@@ -15,6 +19,7 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "5mb",
     },
   },
+  transpilePackages: ["@supabase/supabase-js"],
 };
 
 export default nextConfig;
