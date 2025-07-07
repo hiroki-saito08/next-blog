@@ -1,42 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Next.js + TypeScript Practice Blog
 
-## Getting Started
+This is a practice project built with **Next.js 15**, **TypeScript**, and **Prisma**.  
+It works as a simple blog application where users can post articles with a title, image, and Markdown-formatted content.
 
-First, run the development server:
+簡易ブログアプリとして、画像付きの投稿とマークダウンによる本文記述、ライブプレビュー機能が実装されています。
 
-```bash
+---
+
+## 🚀 Tech Stack / 使用技術
+
+- **Next.js 15** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **Prisma**
+- **Supabase** (Auth)
+- **Zod** (Validation)
+
+---
+
+## 📁 Project Structure / ディレクトリ構成
+
+```plaintext
+.
+├── app/                 # App Router-based pages
+├── components/          # Reusable UI components / 再利用可能なUI部品
+├── lib/                 # Utility functions (DB, auth) / 認証・DB系ユーティリティ
+├── prisma/              # Prisma schema & config / DBスキーマ
+├── public/              # Static files / 公開画像など
+├── styles/              # Tailwind設定など
+└── tsconfig.json        # TypeScript config
+🧑‍💻 Features / 機能
+📌 Simple blog posts with title, image, and content
+タイトル・画像・本文からなる投稿が可能です。
+
+🖼️ Image upload
+投稿にカバー画像を設定できます。
+
+✍️ Markdown support for content
+本文は Markdown 記法で記述でき、装飾や見出しが使えます。
+
+👀 Live preview
+入力と同時に Markdown のプレビューを確認できます。
+
+🛠️ How to Run / 実行方法
+
+git clone https://github.com/hiroki-saito08/next-blog.git
+cd next-blog
+
+# Install dependencies / 依存パッケージをインストール
+npm install
+
+# Start the development server / 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-## DB Started
-
+# Optional: View DB with Prisma Studio / Prisma Studio でDBを確認
 npx prisma studio
+Open your browser and go to:
+http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📚 Learning Purpose / 学習目的
+This project was created to practice modern full-stack development techniques:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+このプロジェクトは以下の技術を学ぶ目的で作成されました：
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Building applications with Next.js App Router
 
-## Learn More
+Type-safe forms using TypeScript + Zod
 
-To learn more about Next.js, take a look at the following resources:
+Implementing authentication with Supabase
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Modeling and querying databases via Prisma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# next-blog
+Handling Markdown input and rendering live preview
